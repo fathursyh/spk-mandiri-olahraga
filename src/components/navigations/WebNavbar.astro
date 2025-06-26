@@ -33,12 +33,25 @@ import { Icon } from 'astro-icon/components'
   .active::after {
     content: '';
     position: absolute;
-    left: 50%;
     transform: translateX(-50%);
     bottom: -8px;
-    height: 8px;
-    width: 8px;
+    height: 5px;
+    width: 5px;
     border-radius: 100%;
     background-color: white;
+    animation: leftRight 1.8s ease-in-out alternate infinite;
+  }
+
+  @keyframes leftRight {
+    0% {
+      left: 10%
+    }
+    50% {
+      width: 12px;
+      border-radius: 30%;
+    }
+    100% {
+      left: 90%;
+    }
   }
 </style>

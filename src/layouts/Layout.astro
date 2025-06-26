@@ -1,5 +1,7 @@
 ---
+import WebFooter from "../components/navigations/WebFooter.astro";
 import WebNavbar from "../components/navigations/WebNavbar.astro";
+import BodyScripts from "../components/partials/BodyScripts.astro";
 import BlurBackground from "../components/partials/BlurBackground.astro";
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
@@ -23,25 +25,8 @@ const { title, description } = Astro.props;
         <WebNavbar />
         <BlurBackground />
         <slot />
-        <script src="https://unpkg.com/aos@next/dist/aos.js" is:inline></script>
-        <script is:inline>
-            AOS.init({
-                offset: 80,
-                delay: 0,
-                duration: 700,
-                easing: "ease",
-                once: false,
-            });
-            document.addEventListener("astro:after-swap", () => {
-                AOS.init({
-                    offset: 80,
-                    delay: 0,
-                    duration: 700,
-                    easing: "ease",
-                    once: false,
-                });
-            });
-        </script>
+        <WebFooter />
+        <BodyScripts />
     </body>
 </html>
 
@@ -49,6 +34,7 @@ const { title, description } = Astro.props;
     html,
     body {
         margin: 0;
+        padding: 0;
         width: 100%;
         height: 100%;
     }

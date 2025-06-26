@@ -1,9 +1,12 @@
 ---
+export const prerender = false;
+import KalkulasiPage from '../components/kalkulasi/KalkulasiPage.vue';
 import Layout from '../layouts/Layout.astro';
+if (Astro.url.searchParams.get('mode') === null) {
+	return Astro.redirect('/kalkulasi?mode=pakar');
+}
 ---
 <title>F-AHP - Kalkulasi</title>
 <Layout>
-	<main class="min-h-screen">
-		<p class="text-red-500">praktek</p>
-	</main>
+	<KalkulasiPage client:only="vue"/>
 </Layout>

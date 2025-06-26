@@ -1,20 +1,24 @@
 ---
 
 ---
+<script>
+  import 'flowbite';
+</script>
 <script src="https://unpkg.com/aos@next/dist/aos.js" is:inline></script>
 <script is:inline>
   AOS.init({
     offset: 80,
     delay: 0,
-    duration: 700,
+    duration: 900,
     easing: "ease",
     once: false,
   });
   document.addEventListener("astro:after-swap", () => {
+    initFlowbite();
     AOS.init({
       offset: 80,
       delay: 0,
-      duration: 700,
+      duration: 900,
       easing: "ease",
       once: false,
     });

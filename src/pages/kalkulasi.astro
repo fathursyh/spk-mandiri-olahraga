@@ -5,6 +5,7 @@ import Layout from '../layouts/Layout.astro';
 if (Astro.url.searchParams.get('mode') === null) {
 	return Astro.redirect('/kalkulasi?mode=pakar');
 }
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=3600");
 ---
 <title>F-AHP - Kalkulasi</title>
 <Layout>

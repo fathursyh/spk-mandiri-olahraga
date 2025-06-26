@@ -2,7 +2,7 @@
 
 ---
 <section class="lg:grid h-screen place-content-center">
-    <div class="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32 flex justify-evenly z-10">
+    <div class="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32 flex justify-evenly z-10 overflow-hidden">
         <div class="max-w-prose text-left">
             <h1 class="text-5xl font-bold text-gray-800" data-aos="fade-right">Sistem <span class="text-green-600">Penunjang Keputusan Cerdas</span></h1>
 
@@ -14,23 +14,21 @@
                 >
             </p>
             <p class="text-gray-600 font-light" data-aos="fade-up" data-aos-delay="200">Dibuat oleh <span class="font-medium">Fathur Syah</span> untuk tugas matakuliah SPK</p>
-            <div class="mt-4 flex gap-4 sm:mt-6" role="navigation">
+            <div class="mt-4 flex gap-4 sm:mt-6" role="navigation" data-aos="fade" data-aos-delay="800">
                 <a
-                    class="inline-block rounded border border-indigo-600 bg-green-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-green-700 custom-pulse"
-                    href="/kalkulasi"
-                    data-aos-delay="700"
-                    data-aos="zoom-in"
+                    class="inline-block rounded border border-indigo-600 bg-green-600 px-5 py-3 font-medium text-white shadow-sm duration-300 hover:bg-green-700 custom-pulse"
+                    href="/kalkulasi?mode=pakar"
                     title="Mulai kalkulasi SPK"
+                    style="transition-property: all;"
                 >
                     Mulai Kalkulasi
                 </a>
 
                 <a
-                    class="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900 hover:shadow-[0px_0px_20px_0px_rgba(34,_197,_94,_0.5)]"
+                    class="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm hover:bg-gray-50 hover:text-gray-900 hover:shadow-[0px_0px_20px_0px_rgba(34,_197,_94,_0.5)] duration-300"
                     href="#"
-                    data-aos-delay="700"
-                    data-aos="zoom-in"
                     title="Lihat tinjauan pustaka"
+                    style="transition-property: all;"
                 >
                     Tinjauan Pustaka
                 </a>

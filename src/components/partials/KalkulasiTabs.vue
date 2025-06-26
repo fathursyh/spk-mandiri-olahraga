@@ -1,5 +1,5 @@
 <template>
-    <div class="border-b border-gray-300">
+    <div class="border-b border-gray-300 sticky top-0">
         <ul
             class="flex flex-wrap justify-evenly -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
             <li class="me-2" data-aos="fade-right">
@@ -42,7 +42,7 @@
     const changeTab = (mode: string) => {
         const url = new URL(window.location.href);
         url.searchParams.set('mode', mode);
-        window.history.pushState({}, "", url);
+        window.history.replaceState({}, "", url);
         emit('onChangeTab');
     }
 </script>

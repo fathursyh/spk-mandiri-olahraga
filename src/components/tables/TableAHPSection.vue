@@ -40,7 +40,7 @@
         </div>
 
         <div class="mt-6 flex flex-col sm:flex-row justify-between items-center gap-4 max-w-screen-2xl mx-auto">
-             <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-2.5 me-2 mb-2 focus:outline-none dark:focus:ring-blue-800" title="Hitung dan terapkan bobot" @click="triggerCalculation">Hitung Bobot</button>
+             <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-3 me-2 mb-2 focus:outline-none dark:focus:ring-blue-800 w-full md:w-fit" title="Hitung dan terapkan bobot" @click="triggerCalculation">Hitung Bobot</button>
              <span v-if="result">Consistency Ratio =  {{ result.consistencyRatio }}</span>
              <div v-if="result" class="text-sm text-right">
                  <span class="font-medium" :class="[result?.isConsistent ? 'text-green-600' : 'text-red-600']">{{ result?.isConsistent? 'Bobot konsisten.' : 'Bobot tidak konsisten.'  }}</span>

@@ -1,7 +1,7 @@
 ---
 const { pathname } = Astro.url;
 import { Icon } from 'astro-icon/components'
-
+console.log(pathname);
 ---
 <nav class="bg-green-600 7order-gray-200 fixed w-full z-40">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -21,7 +21,7 @@ import { Icon } from 'astro-icon/components'
           <a href="/" class:list={["block py-2 px-3 text-white rounded-sm md:border-0 md:p-0 active:scale-95", pathname === '/' && 'active']} aria-current={pathname === '/' && 'page'}>Beranda</a>
         </li>
         <li>
-          <a href="/kalkulasi?mode=pakar" class:list={["block py-2 px-3 text-white rounded-sm md:border-0 md:p-0 active:scale-95", pathname === '/kalkulasi' && 'active']} aria-current={pathname === '/kalkulasi' && 'page'}>Kalkulasi</a>
+          <a href="/kalkulasi?mode=pakar" class:list={["block py-2 px-3 text-white rounded-sm md:border-0 md:p-0 active:scale-95", pathname === '/kalkulasi' && 'active']} aria-current={pathname === '/kalkulasi' && 'page'}>Kalkulasi {pathname} </a>
         </li>
       </menu>
     </div>

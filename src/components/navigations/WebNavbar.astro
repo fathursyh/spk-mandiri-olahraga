@@ -21,7 +21,7 @@ console.log(pathname);
           <a href="/" class:list={["block py-2 px-3 text-white rounded-sm md:border-0 md:p-0 active:scale-95", pathname === '/' && 'active']} aria-current={pathname === '/' && 'page'}>Beranda</a>
         </li>
         <li>
-          <a href="/kalkulasi?mode=pakar" class:list={["block py-2 px-3 text-white rounded-sm md:border-0 md:p-0 active:scale-95", pathname === '/kalkulasi' && 'active']} aria-current={pathname === '/kalkulasi' && 'page'}>Kalkulasi {pathname} </a>
+          <a href="/kalkulasi?mode=pakar" class:list={["block py-2 px-3 text-white rounded-sm md:border-0 md:p-0 active:scale-95", pathname === '/kalkulasi' || pathname === '/kalkulasi/' && 'active']} aria-current={pathname === '/kalkulasi' && 'page'}>Kalkulasi</a>
         </li>
       </menu>
     </div>

@@ -5,7 +5,7 @@
     import type { AtletType } from "../../types/atlet";
     import { calculateExpertModeRankingsWithArray } from "../../scripts/saw";
     import TableHasilPeringkat from "../tables/TableHasilPeringkat.vue";
-  import { AlertEnum } from "../../enums/AlertEnum";
+    import { AlertEnum } from "../../enums/AlertEnum";
     const showAlert: Function = inject('showAlert')!;
 
     const defaultAtlet = { nama: "", data: [1, 1, 1, 1, 1, 1, 1] };

@@ -1,5 +1,6 @@
 <template>
     <div class="mt-6 overflow-x-auto max-w-screen-2xl mx-auto overflow-y-hidden">
+        <p class="text-xs">* K7 merupakan hasil dari <span class="font-medium text-green-600">Fuzzy Tsukamoto</span></p>
             <table class="w-full min-w-max text-left border-collapse">
                 <thead class="bg-gray-50">
                     <tr>
@@ -21,7 +22,7 @@
                             <input type="text" v-model="atlet[item - 1].nama" :id="`nama-${item}`" maxlength="50" class="w-full p-2 bg-gray-50 border-gray-300 rounded-md text-gray-500" minlength="1" />
                         </td>
                         <td v-for="(countData) in atlet[item - 1].data.length" :key="countData" class="px-4 py-3">
-                            <input v-model.lazy="atlet[item - 1].data[countData - 1]" :id="`inputData-${item}${countData}`" type="number" inputmode="numeric" class="w-20 p-2 bg-gray-50 border-gray-300 rounded-md text-gray-500" min="1" max="10" maxlength="2" @change="checkNumber(atlet[item - 1].data[countData - 1], item - 1, countData - 1)" />
+                            <input v-model.lazy="atlet[item - 1].data[countData - 1]" :id="`inputData-${item}${countData}`" type="number" :disabled="countData === 7" inputmode="numeric" class="w-20 p-2 bg-gray-50 border-gray-300 rounded-md text-gray-500 disabled:bg-gray-300" min="1" max="10" maxlength="2" @change="checkNumber(atlet[item - 1].data[countData - 1], item - 1, countData - 1)" />
                         </td>
                     </tr>
                 </TransitionGroup>
@@ -33,9 +34,10 @@
 <script setup lang="ts">
     import { computed, watch } from 'vue';
     import type { AtletType } from '../../types/atlet';
+    import { calculateK7 } from '../../scripts/fuzzy';
 
     const props = defineProps<{
-        atlet: AtletType[]
+        atlet: AtletType[],
     }>();
     const atletCount = computed(() => {
         return props.atlet.length;
@@ -51,5 +53,8 @@
     const checkNumber = (value: number, itemIndex: number, countIndex: number) => {
         if (value > 10) props.atlet[itemIndex].data[countIndex] = 10;
         if (value < 1) props.atlet[itemIndex].data[countIndex] = 1;
+        if (countIndex === 0 || countIndex === 2 || countIndex === 4 || countIndex === 5) {
+            props.atlet[itemIndex].data[6] = calculateK7(props.atlet[itemIndex].data[0], props.atlet[itemIndex].data[2], props.atlet[itemIndex].data[4], props.atlet[itemIndex].data[5]);
+        }
     }
 </script>

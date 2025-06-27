@@ -6,7 +6,7 @@
     <div v-if="type === 'success'" class="p-4 py-6 text-sm text-center text-green-800 bg-green-300" role="alert">
         <span class="font-medium">Sukses!</span> {{ text }}
     </div>
-    <div v-else class="p-4 py-6 text-sm text-center text-yellow-800 bg-yellow-300" role="alert">
+    <div v-if="type === 'warning'" class="p-4 py-6 text-sm text-center text-yellow-800 bg-yellow-300" role="alert">
         <span class="font-medium">Perhatian!</span> {{ text }}
     </div>
 </div>

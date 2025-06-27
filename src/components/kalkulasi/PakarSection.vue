@@ -11,7 +11,7 @@
             </div>
         </div>
         <TableInputPakar :atlet="atlet" />
-    <TableHasilPeringkat v-if="atlet.length > 0 && atlet[0].nama !== ''" :hasil="hasilRanking" />
+        <TableHasilPeringkat v-if="atlet.length > 0 && atlet[0].nama !== ''" :hasil="hasilRanking" />
     </div>
 </template>
 

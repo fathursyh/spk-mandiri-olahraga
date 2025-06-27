@@ -1,7 +1,4 @@
-export function calculateExpertModeRankingsWithArray(athletes) {
-  // --- LANGKAH 1: Siapkan Bobot Kriteria dalam bentuk Array ---
-  // Urutan harus sesuai dengan K1, K2, K3, ..., K7
-  const WEIGHTS = [
+export function calculateExpertModeRankingsWithArray(athletes, weights = [
     0.45334, // Bobot K1
     0.19956, // Bobot K2
     0.11525, // Bobot K3
@@ -9,7 +6,7 @@ export function calculateExpertModeRankingsWithArray(athletes) {
     0.40134, // Bobot K5
     0.11853, // Bobot K6
     0.05822  // Bobot K7
-  ];
+  ]) {
 
   if (athletes.length === 0) {
     return [];
@@ -42,7 +39,7 @@ export function calculateExpertModeRankingsWithArray(athletes) {
     // Hitung Skor Akhir menggunakan metode .reduce() untuk cara yang lebih fungsional
     // Vi = Σ(wj * rij)
     const finalScore = normalizedValues.reduce((total, normValue, index) => {
-      return total + (normValue * WEIGHTS[index]);
+      return total + (normValue * weights[index]);
     }, 0); // 0 adalah nilai awal dari 'total'
 
     return {

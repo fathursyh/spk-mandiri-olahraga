@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { computed, KeepAlive, provide, reactive, ref } from "vue";
+    import { computed, provide, reactive, ref } from "vue";
     import KalkulasiTabs from "../partials/KalkulasiTabs.vue";
     import PakarSection from "./PakarSection.vue";
     import CustomSection from "./CustomSection.vue";
@@ -35,18 +35,18 @@
 </script>
 
 <template>
-    <main class="w-full h-screen pt-14 overflow-hidden p-2">
+    <main class="w-full min-h-screen pt-14 overflow-hidden p-2">
         <h1 class="text-3xl font-bold text-gray-800 text-center mt-12 mb-8" data-aos="fade-down">Kalkulasi SPK <span class="text-green-600">Fuzzy dan AHP-SAW</span></h1>
         <section class="w-full h-full relative" aria-label="Header dan form" data-aos="fade-up">
             <KalkulasiTabs @on-change-tab="changeMode" />
             <Transition name="fade" mode="out-in">
-                <KeepAlive>
                     <component :is="spkContent" />
-                </KeepAlive>
             </Transition>
         </section>
     <Teleport to="body">
-        <CustomAlert v-if="alertFeedback.show" :type="alertFeedback.type" :text="alertFeedback.text" />
+        <Transition name="fade" mode="out-in">
+            <CustomAlert v-if="alertFeedback.show" :type="alertFeedback.type" :text="alertFeedback.text" />
+        </Transition>
     </Teleport>
     </main>
 </template>

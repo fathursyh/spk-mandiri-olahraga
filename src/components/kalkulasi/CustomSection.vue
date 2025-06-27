@@ -1,51 +1,72 @@
+<script setup lang="ts">
+    import { computed, inject, ref, watch } from "vue";
+    import TableAHPSection from "../tables/TableAHPSection.vue";
+    import TableInputPakar from "../tables/TableInputPakar.vue";
+    import type { AtletType } from "../../types/atlet";
+    import { calculateExpertModeRankingsWithArray } from "../../scripts/saw";
+    import TableHasilPeringkat from "../tables/TableHasilPeringkat.vue";
+  import { AlertEnum } from "../../enums/AlertEnum";
+    const showAlert: Function = inject('showAlert')!;
+
+    const defaultAtlet = { nama: "", data: [1, 1, 1, 1, 1, 1, 1] };
+    const atlet = ref<AtletType[]>(JSON.parse(localStorage.getItem("atlet")!) || []);
+
+    watch(atlet.value, () => {
+        localStorage.setItem("atlet", JSON.stringify(atlet.value));
+    });
+
+    const tambahAtlet = () => {
+        atlet.value.push({ nama: defaultAtlet.nama, data: [...defaultAtlet.data] });
+    };
+
+    const clearAtlet = () => {
+        const windowConfirm = confirm("Clear semua data atlet?");
+        if (!windowConfirm) return;
+        localStorage.removeItem("atlet");
+        atlet.value.length = 0;
+        showAlert(AlertEnum.Success, "Data atlet berhasil dikosongkan.");
+      };
+      
+      const bobotAHP = ref< number[] >([]);
+      const getAhpWeights = (e: number[]) => {
+      bobotAHP.value = e;
+    };
+    const hasilRanking = computed(() => {
+        return calculateExpertModeRankingsWithArray(atlet.value, bobotAHP.value);
+    });
+</script>
+
 <template>
-    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-md">
-
-  <div>
-    <h2 class="text-2xl font-bold text-gray-800">Tentukan Bobot Kriteria (AHP)</h2>
-    <p class="mt-1 text-sm text-gray-500">
-      Isi matriks berikut untuk menentukan seberapa penting satu kriteria dibandingkan yang lain.
-    </p>
-  </div>
-  
-  <div class="mt-6 overflow-x-auto">
-    <p class="mb-2 text-sm">Contoh: Jika 'Kekuatan' **3x lebih penting** dari 'Stabilitas', isi angka 3 pada baris K1 kolom K2.</p>
-    <table class="w-full min-w-max text-center border-collapse">
-      <thead class="bg-gray-50">
-        <tr>
-          <th class="p-2 border">Kriteria</th>
-          <th class="p-2 border">K1</th>
-          <th class="p-2 border">K2</th>
-          <th class="p-2 border">K3</th>
-          <th class="p-2 border">K4</th>
-          <th class="p-2 border">K5</th>
-          <th class="p-2 border">K6</th>
-          <th class="p-2 border">K7</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="p-2 border font-medium bg-gray-50">K1: Kekuatan</td>
-          <td class="p-1 border"><input type="number" value="1" disabled class="w-16 text-center bg-gray-200 cursor-not-allowed"></td>
-          <td class="p-1 border"><input type="number" placeholder="1-9" class="w-16 text-center border-gray-300 rounded-md"></td>
-          <td class="p-1 border"><input type="number" placeholder="1-9" class="w-16 text-center border-gray-300 rounded-md"></td>
-          </tr>
-        <tr>
-          <td class="p-2 border font-medium bg-gray-50">K2: Stabilitas</td>
-          <td class="p-1 border"><input type="text" readonly class="w-16 text-center bg-gray-200" placeholder="Otomatis"></td>
-          <td class="p-1 border"><input type="number" value="1" disabled class="w-16 text-center bg-gray-200 cursor-not-allowed"></td>
-          <td class="p-1 border"><input type="number" placeholder="1-9" class="w-16 text-center border-gray-300 rounded-md"></td>
-           </tr>
-        
-        </tbody>
-    </table>
-  </div>
-  
-  <div class="mt-6 flex justify-end">
-    <button class="py-2 px-6 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-      Hitung Bobot
-    </button>
-  </div>
-
-</div>
+    <div class="bg-white mb-10">
+        <TableAHPSection @weights-calculated="getAhpWeights" />
+        <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-md min-h-80">
+            <div class="flex flex-col md:flex-row gap-2 justify-between max-w-screen-2xl mx-auto">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800">Data Atlet (Mode Custom)</h2>
+                    <p class="mt-1 text-sm text-gray-500">Data dengan bobot perhitungan AHP oleh user.</p>
+                </div>
+                <div class="flex gap-2">
+                    <button
+                        type="button"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-2.5 me-2 mb-2 focus:outline-none dark:focus:ring-blue-800"
+                        title="Tambah atlet baru"
+                        @click="tambahAtlet"
+                    >
+                        Tambah
+                    </button>
+                    <button
+                        type="button"
+                        :disabled="atlet.length < 1"
+                        class="text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-6 py-2.5 me-2 mb-2 disabled:bg-gray-400 disabled:cursor-not-allowed!"
+                        title="Hapus semua data atlet"
+                        @click="clearAtlet"
+                    >
+                        Clear Data
+                    </button>
+                </div>
+            </div>
+            <TableInputPakar :atlet="atlet" />
+            <TableHasilPeringkat v-if="atlet.length > 0 && atlet[0].nama !== '' && bobotAHP.length > 0" :hasil="hasilRanking" />
+        </div>
+    </div>
 </template>

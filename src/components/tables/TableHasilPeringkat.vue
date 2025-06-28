@@ -26,7 +26,7 @@
                         </td>
                         <td class="px-4 py-3 text-sm font-medium text-gray-900">{{ item.nama || '[kosong]' }}</td>
                         <td class="px-4 py-3 text-sm font-semibold text-gray-800 text-right">{{ item.skorAkhir }}</td>
-                        <td class="px-4 py-3 text-xs text-gray-500 text-center">K1:{{ item.data[0] }}, K2:{{ item.data[1] }}, K3:{{ item.data[2] }}, K4:{{ item.data[3] }}, K5:{{ item.data[4] }}, K6:{{ item.data[5] }}, K7:{{ item.data[6] }}</td>
+                        <td class="px-4 py-3 text-xs text-gray-500 text-center">K1:{{ item.data[0] }}, K2:{{ item.data[1] }}, K3:{{ item.data[2] }}, K4:{{ item.data[3] }}, K5:{{ item.data[4] }}, K6:{{ item.data[5] }}, K7:{{ item.data[6].toFixed(3) }}</td>
                     </tr>
                 </tbody>
             </table>

@@ -24,7 +24,7 @@
     import { AlertEnum } from '../../enums/AlertEnum';
     
     const showAlert: Function = inject('showAlert')!;
-    const defaultAtlet = {nama: '', data: [1, 1, 1, 1, 1, 1, 1]};
+    const defaultAtlet = {nama: '', data: [1, 1, 1, 1, 1, 1, 1], lulus: '0%'};
     const atlet = ref< AtletType[] >(JSON.parse(localStorage.getItem('atlet')!) || []);
     
     watch(atlet.value, () => {
@@ -32,7 +32,7 @@
     });
 
     const tambahAtlet = () => {
-        atlet.value.push({nama: defaultAtlet.nama, data: [...defaultAtlet.data]});
+        atlet.value.push({nama: defaultAtlet.nama, data: [...defaultAtlet.data], lulus: defaultAtlet.lulus});
     }
     
     const clearAtlet = () => {

@@ -35,7 +35,7 @@
 </script>
 
 <template>
-        <h1 class="text-3xl font-bold text-gray-800 text-center mt-12 mb-8" data-aos="fade-down">Kalkulasi SPK <span class="text-green-600">Fuzzy dan AHP-SAW</span></h1>
+        <h1 class="text-3xl font-bold text-gray-800 text-center mt-12 mb-8" data-aos="fade-down">Kalkulasi SPK <span class="text-green-600">Fuzzy, AHP-SAW dan Logistic Regression</span></h1>
         <section class="w-full h-full relative" aria-label="Header dan form" data-aos="fade-up">
             <KalkulasiTabs @on-change-tab="changeMode" />
             <Transition name="fade" mode="out-in">

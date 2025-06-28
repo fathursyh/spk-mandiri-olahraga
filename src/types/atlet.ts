@@ -1,4 +1,5 @@
 export type AtletType = {
     nama: string,
-    data: number[]
+    data: number[],
+    lulus: string
 }

@@ -1,3 +1,4 @@
+
 export function calculateExpertModeRankingsWithArray(athletes, weights = [
     0.45334, // Bobot K1
     0.19956, // Bobot K2

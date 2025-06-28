@@ -16,6 +16,7 @@ export default defineConfig({
     prefetchAll: true, 
     defaultStrategy: 'hover'
   },
+  trailingSlash: 'ignore',
   integrations: [icon(), vue()],
   redirects: {},
 });

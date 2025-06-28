@@ -31,10 +31,13 @@
                 </tbody>
             </table>
         </div>
+        <AtletComparisonChart :hasil="hasil" />
     </div>
 </template>
 
 <script setup lang="ts">
+import AtletComparisonChart from '../kalkulasi/AtletComparisonChart.vue';
+
     defineProps<{
         hasil: {nama: string, data: number[], skorAkhir: number}[]
     }>();

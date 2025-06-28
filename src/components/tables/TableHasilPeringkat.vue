@@ -24,22 +24,27 @@
                             </div>
                             <span v-else class="inline-flex items-center justify-center w-8 h-8 text-sm font-bold text-indigo-800 bg-indigo-100 rounded-full">{{ i + 1 }}</span>
                         </td>
-                        <td class="px-4 py-3 text-sm font-medium text-gray-900">{{ item.nama || '[kosong]' }}</td>
+                        <td class="px-4 py-3 text-sm font-medium text-gray-900">{{ item.nama || "[kosong]" }}</td>
                         <td class="px-4 py-3 text-sm font-semibold text-gray-800 text-right">{{ item.skorAkhir }}</td>
-                        <td class="px-4 py-3 text-xs text-gray-500 text-center">K1:{{ item.data[0] }}, K2:{{ item.data[1] }}, K3:{{ item.data[2] }}, K4:{{ item.data[3] }}, K5:{{ item.data[4] }}, K6:{{ item.data[5] }}, K7:{{ item.data[6].toFixed(3) }}</td>
+                        <td class="px-4 py-3 text-xs text-gray-500 text-center">
+                            K1:{{ item.data[0] }}, K2:{{ item.data[1] }}, K3:{{ item.data[2] }}, K4:{{ item.data[3] }}, K5:{{ item.data[4] }}, K6:{{ item.data[5] }}, K7:{{ item.data[6].toFixed(3) }}
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <AtletComparisonChart :hasil="hasil" />
+        <BobotAHPChart :criteria-weights="bobot" />
     </div>
 </template>
 
 <script setup lang="ts">
-import AtletComparisonChart from '../kalkulasi/AtletComparisonChart.vue';
-
+    import { inject } from "vue";
+    import AtletComparisonChart from "../kalkulasi/AtletComparisonChart.vue";
+    import BobotAHPChart from "../kalkulasi/BobotAHPChart.vue";
+    
+    const bobot = inject<any>('bobotAHP');
     defineProps<{
-        hasil: {nama: string, data: number[], skorAkhir: number}[]
+        hasil: { nama: string; data: number[]; skorAkhir: number }[];
     }>();
-
 </script>

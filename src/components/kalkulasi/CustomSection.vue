@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { computed, inject, ref, watch } from "vue";
+    import { computed, inject, provide, ref, watch } from "vue";
     import TableAHPSection from "../tables/TableAHPSection.vue";
     import TableInputPakar from "../tables/TableInputPakar.vue";
     import type { AtletType } from "../../types/atlet";
@@ -31,6 +31,7 @@
       const getAhpWeights = (e: number[]) => {
       bobotAHP.value = e;
     };
+    provide('bobotAHP', bobotAHP);
     const hasilRanking = computed(() => {
         return calculateExpertModeRankingsWithArray(atlet.value, bobotAHP.value);
     });

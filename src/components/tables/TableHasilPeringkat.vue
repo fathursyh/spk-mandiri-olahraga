@@ -1,11 +1,11 @@
 <template>
     <div class="py-6 mt-6">
-        <div class="max-w-screen-2xl mx-auto">
+        <div class="max-w-screen-xl mx-auto">
             <h2 class="text-2xl font-bold text-gray-800">Hasil Peringkat Atlet</h2>
             <p class="mt-1 text-sm text-gray-500">Peringkat diurutkan berdasarkan Skor Akhir tertinggi menggunakan metode SAW.</p>
         </div>
 
-        <div class="mt-6 overflow-x-auto max-w-screen-2xl mx-auto">
+        <div class="mt-6 overflow-x-auto max-w-screen-xl mx-auto">
             <table class="w-full text-left border-collapse">
                 <thead class="bg-gray-50">
                     <tr>

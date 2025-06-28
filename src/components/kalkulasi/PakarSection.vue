@@ -1,6 +1,6 @@
 <template>
     <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-md min-h-80">
-        <div class="flex flex-col md:flex-row gap-2 justify-between max-w-screen-2xl mx-auto">
+        <div class="flex flex-col md:flex-row gap-2 justify-between max-w-screen-xl mx-auto">
             <div>
                 <h2 class="text-2xl font-bold text-gray-800">Data Atlet (Mode Pakar)</h2>
                 <p class="mt-1 text-sm text-gray-500">Data dengan bobot tetap dimuat berdasarkan penelitian asli.</p>

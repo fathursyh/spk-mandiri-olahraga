@@ -1,6 +1,6 @@
 <template>
     <div class="bg-white p-6 rounded-lg border border-gray-300 shadow-md">
-        <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row gap-2 justify-between">
+        <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-2 justify-between">
             <div>
                 <h2 class="text-2xl font-bold text-gray-800">Tentukan Bobot Kriteria (AHP)</h2>
                 <p class="mt-1 text-sm text-gray-500">Isi matriks berikut untuk menentukan seberapa penting satu kriteria dibandingkan yang lain (gunakan skala 1-9).</p>
@@ -8,7 +8,7 @@
             <button type="button" class="text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-6 py-2.5 me-2 mb-2 disabled:bg-gray-400 disabled:cursor-not-allowed!" title="Clear data bobot" @click="clearBobot">Reset Bobot</button>
         </div>
 
-        <div class="mt-6 overflow-x-auto max-w-screen-2xl mx-auto">
+        <div class="mt-6 overflow-x-auto max-w-screen-xl mx-auto">
             <table class="w-full min-w-max text-center border-collapse">
                 <thead class="bg-gray-50">
                     <tr>
@@ -39,7 +39,7 @@
             </table>
         </div>
 
-        <div class="mt-6 flex flex-col sm:flex-row justify-between items-center gap-4 max-w-screen-2xl mx-auto">
+        <div class="mt-6 flex flex-col sm:flex-row justify-between items-center gap-4 max-w-screen-xl mx-auto">
              <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-3 me-2 mb-2 focus:outline-none dark:focus:ring-blue-800 w-full md:w-fit" title="Hitung dan terapkan bobot" @click="triggerCalculation">Hitung Bobot</button>
              <span v-if="result">Consistency Ratio =  {{ result.consistencyRatio }}</span>
              <div v-if="result" class="text-sm text-right">

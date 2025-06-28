@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-6 overflow-x-auto max-w-screen-2xl mx-auto overflow-y-hidden">
+    <div class="mt-6 overflow-x-auto max-w-screen-xl mx-auto overflow-y-hidden">
         <p class="text-xs">* K7 merupakan hasil dari <span class="font-medium text-green-600">Fuzzy Tsukamoto</span></p>
         <p class="text-xs">* K8 merupakan hasil dari <span class="font-medium text-green-600">Logistic Regression</span></p>
             <table class="w-full min-w-max text-left border-collapse">

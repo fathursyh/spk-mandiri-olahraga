@@ -14,7 +14,7 @@
                         <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">K5 (Offense)</th>
                         <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">K6 (Defense)</th>
                         <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">K7 (Kesiapan)</th>
-                        <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">K8 Peluang Terpilih</th>
+                        <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200" title="K8 merupakan peluang terpilihnya atlet berdasarkan machine learning.">K8 (Peluang)</th>
                     </tr>
                 </thead>
                 <TransitionGroup tag="tbody" name="fade-up">

@@ -1,0 +1,12 @@
+---
+export const prerender = true;
+import TinjauanSection from '../components/tinjauan/TinjauanSection.astro';
+import Layout from '../layouts/Layout.astro';
+Astro.response.headers.set("Cache-Control", "public, max-age=3000, s-maxage=3600");
+---
+<title>F-AHP-LR - Tinjauan</title>
+<Layout>
+    <main class="min-h-screen pt-14">
+        <TinjauanSection />
+    </main>
+</Layout>

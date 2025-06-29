@@ -1,0 +1,43 @@
+---
+
+---
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <slot />
+  </div>
+</div>
+
+
+<script>
+  import Swiper from "swiper";
+  import { Navigation, Pagination } from "swiper/modules";
+  // import Swiper and modules styles
+  import "swiper/css";
+  import "swiper/css/navigation";
+
+  // init Swiper:
+  const swiper = new Swiper(".swiper", {
+    // configure Swiper to use modules
+    modules: [Navigation, Pagination],
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    speed: 700,
+    spaceBetween: 20,
+  });
+
+  document.addEventListener("astro:after-swap", () => {
+    const swiper = new Swiper(".swiper", {
+    modules: [Navigation, Pagination],
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    speed: 700,
+    spaceBetween: 20,
+  });
+  });
+</script>

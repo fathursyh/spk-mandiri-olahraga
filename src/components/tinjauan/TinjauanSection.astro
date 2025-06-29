@@ -1,0 +1,84 @@
+---
+import AhpDanSaw from "./AhpDanSaw.astro";
+import FuzzyTsukamoto from "./FuzzyTsukamoto.astro";
+import LogisticRegression from "./LogisticRegression.astro";
+import SwiperWrapper from "./SwiperWrapper.astro";
+import TheBadminton from "./TheBadminton.astro";
+---
+
+<section class="h-full max-w-screen-lg mx-auto p-4">
+  <div class="relative">
+    <div class="swiper-button-prev absolute scale-75 text-green-600!" data-aos="fade-right"></div>
+    <h1 class="font-bold text-3xl text-center text-green-600! my-6" data-aos="fade-down">
+      Tinjauan Pustaka
+    </h1>
+    <div class="swiper-button-next absolute scale-75 text-green-600!" data-aos="fade-left"></div>
+  </div>
+  <div
+    role="contentinfo"
+    class="w-full min-h-[60vh] bg-white border border-gray-300 shadow-lg p-8 cursor-default"
+    data-aos="fade-up" data-aos-delay="400"
+  >
+    <SwiperWrapper>
+      <div class="swiper-slide">
+        <FuzzyTsukamoto />
+      </div>
+      <div class="swiper-slide">
+        <AhpDanSaw />
+      </div>
+      <div class="swiper-slide">
+        <LogisticRegression />
+      </div>
+      <div class="swiper-slide">
+        <TheBadminton />
+      </div>
+    </SwiperWrapper>
+  </div>
+</section>
+
+<style is:global>
+  header {
+    text-align: center;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    color: #343a40;
+    font-size: 2em;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    text-align: left;
+    color:#059669;
+  }
+
+  /* Judul per Bagian */
+  h3 {
+    color: #059669; /* Biru tua untuk judul bagian */
+    font-size: 1.5em;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 10px;
+    margin-top: 20px; /* Jarak antar bagian */
+  }
+
+  /* Paragraf Teks */
+  p {
+    text-align: justify; /* Membuat teks rata kiri-kanan agar rapi */
+    margin-bottom: 15px;
+  }
+
+  /* Daftar (Unordered List) */
+  ul {
+    padding-left: 20px;
+    list-style-type: square;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+</style>

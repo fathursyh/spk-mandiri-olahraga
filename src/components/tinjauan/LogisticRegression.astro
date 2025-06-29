@@ -1,0 +1,31 @@
+---
+
+---
+
+<section>
+  <h2>Logistic Regression</h2>
+  <h3>Pendahuluan</h3>
+  <p>
+    Regresi Logistik adalah salah satu algoritma fundamental dalam statistik dan <i>machine learning</i> yang digunakan untuk tugas <i>classification</i> (klasifikasi). Berbeda dengan Regresi Linear yang memprediksi nilai kontinu (misalnya harga rumah), Regresi Logistik digunakan untuk memprediksi probabilitas dari suatu kejadian yang hasilnya bersifat kategorikal, terutama biner (misalnya "Ya/Tidak", "Lulus/Gagal", atau "Sakit/Sehat").
+  </p>
+  <p>
+    Inti dari algoritma ini adalah fungsi sigmoid (atau fungsi logistik) yang mengubah output dari persamaan linear menjadi nilai probabilitas antara 0 dan 1. Berdasarkan nilai probabilitas ini dan sebuah ambang batas (<i>threshold</i>, biasanya 0.5), model akan mengklasifikasikan data ke dalam kelas yang sesuai. Karena kemampuannya memodelkan probabilitas, Regresi Logistik menjadi sangat populer dan sering digunakan sebagai model dasar (<i>baseline model</i>) untuk berbagai masalah klasifikasi.
+  </p>
+</section>
+
+<section>
+  <h3>Kelebihan dan Kekurangan</h3>
+  <p>
+    Kelebihan utama dari Regresi Logistik adalah kesederhanaan dan interpretabilitasnya. Model ini mudah diimplementasikan, efisien secara komputasi (cepat untuk dilatih), dan hasil koefisiennya dapat diinterpretasikan untuk memahami pengaruh setiap variabel input terhadap hasil. Selain itu, Regresi Logistik tidak memerlukan asumsi hubungan linear antara variabel dependen dan independen secara langsung, serta tidak mengasumsikan distribusi data tertentu pada variabel input.
+  </p>
+  <p>
+    Kekurangannya, model ini mengasumsikan hubungan yang linear antara variabel independen dengan <i>log-odds</i> dari variabel dependen, sehingga tidak mampu menangkap hubungan yang kompleks atau non-linear. Hal ini membuatnya rentan terhadap <i>underfitting</i> jika data memiliki pola yang rumit. Model ini juga dapat sensitif terhadap data pencilan (<i>outliers</i>) dan kurang bekerja dengan baik jika terdapat multikolinearitas yang tinggi (korelasi kuat antar variabel independen).
+  </p>
+</section>
+
+<section>
+  <h3>Aplikasi</h3>
+  <p>
+    Regresi Logistik diaplikasikan secara luas di berbagai industri. Dalam dunia medis, digunakan untuk mendiagnosis penyakit berdasarkan gejala pasien. Di sektor perbankan, ia menjadi tulang punggung sistem <i>credit scoring</i> untuk memprediksi risiko gagal bayar seorang nasabah. Dalam pemasaran, Regresi Logistik digunakan untuk memprediksi <i>customer churn</i> (apakah pelanggan akan berhenti berlangganan). Contoh lainnya adalah pada penyaringan email spam, di mana model memprediksi apakah sebuah email termasuk kategori "spam" atau "bukan spam".
+  </p>
+</section>

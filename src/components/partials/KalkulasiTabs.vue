@@ -5,7 +5,7 @@
             <li class="me-2" data-aos="fade-right">
                 <button
                     title="Menggunakan bobot pakar"
-                    class="inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 group" :class="mode === 'pakar' && 'text-green-600!'" @click="changeTab('pakar')">
+                    class="inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-green-300 transition-all duration-500 group" :class="mode === 'pakar' && 'text-green-600! border-green-300! shadow-[inset_0px_-30px_43px_-50px_#059669]!'" @click="changeTab('pakar')">
                     <span class="me-1">
                         <svg class="w-6 h-6 text-gray-500" :class="mode === 'pakar' && 'text-green-600!'" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -20,7 +20,7 @@
             <li class="me-2" data-aos="fade-left">
                 <button
                     title="Kustomisasi bobot sendiri"
-                    class="inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 group" :class="mode === 'custom' && 'text-green-600!'" @click="changeTab('custom')">
+                    class="inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-green-300 transition-all duration-500 group" :class="mode === 'custom' && 'text-green-600! border-green-300! shadow-[inset_0px_-30px_43px_-50px_#059669]!'" @click="changeTab('custom')">
                     <span class="me-1">
                         <svg class="w-6 h-6 text-gray-500" :class="mode === 'custom' && 'text-green-600!'" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
